@@ -18,7 +18,7 @@ export default function Home() {
         }
       }
 
-      axios.get('http://localhost:8000/api/profile', config)
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, config)
         .then((res) => {
           setProfile(res.data.user)
         })

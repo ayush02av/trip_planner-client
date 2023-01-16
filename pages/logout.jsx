@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 export default function Logout() {
 
     useEffect(function () {
-        window.location = 'http://localhost:8000/auth/logout'
+        window.location = `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/logout`
     })
 
     return (
