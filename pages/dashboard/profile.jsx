@@ -4,7 +4,15 @@ import { useSelector } from 'react-redux'
 const profileDisplayItems = [
     {
         title: 'Username',
-        key: 'nickname'
+        key: 'username'
+    },
+    {
+        title: 'First Name',
+        key: 'first_name'
+    },
+    {
+        title: 'Last Name',
+        key: 'last_name'
     },
     {
         title: 'Email',

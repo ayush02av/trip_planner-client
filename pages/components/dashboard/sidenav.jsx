@@ -16,15 +16,15 @@ const menu = [
         ]
     },
     {
-        category: 'Groups',
+        category: 'Trip',
         subMenu: [
             {
-                title: 'All Groups',
-                cta: '/dashboard/groups/all'
+                title: 'All Trips',
+                cta: '/dashboard/trips/all'
             },
             {
-                title: 'Start a new group',
-                cta: '/dashboard/groups/new'
+                title: 'Start a new trip',
+                cta: '/dashboard/trips/new'
             }
         ]
     },
@@ -32,10 +32,10 @@ const menu = [
         category: 'Preferences',
         subMenu: [
             {
-                title: 'My Calendar',
+                title: 'My Places',
             },
             {
-                title: 'My Places',
+                title: 'My Calendar',
             }
         ]
     },
