@@ -6,7 +6,5 @@ export default function Login() {
         window.location = `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/login`
     })
 
-    return (
-        <></>
-    )
+    return null
 }

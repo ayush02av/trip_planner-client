@@ -6,7 +6,5 @@ export default function Logout() {
         window.location = `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/logout`
     })
 
-    return (
-        <></>
-    )
+    return null
 }
