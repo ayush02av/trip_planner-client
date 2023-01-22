@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const menu = [
     {
@@ -9,7 +10,7 @@ const menu = [
                 cta: '/dashboard'
             },
             {
-                title: 'Profile',
+                title: 'My Profile',
                 cta: '/dashboard/profile'
             }
         ]
@@ -18,11 +19,23 @@ const menu = [
         category: 'Groups',
         subMenu: [
             {
-                title: 'All',
-                cta: '/dashboard/groups'
+                title: 'All Groups',
+                cta: '/dashboard/groups/all'
             },
             {
-                title: 'New'
+                title: 'Start a new group',
+                cta: '/dashboard/groups/new'
+            }
+        ]
+    },
+    {
+        category: 'Preferences',
+        subMenu: [
+            {
+                title: 'My Calendar',
+            },
+            {
+                title: 'My Places',
             }
         ]
     },
@@ -38,14 +51,25 @@ const menu = [
 ]
 
 export default function Sidenav() {
+    const router = useRouter()
+
     return (
         <div className='bg-teal-400 p-2 h-100'>
-            {menu.map(menuItem => (
-                <div className="mb-3">
-                    <div className="text-lg">{menuItem.category}</div>
+            {menu.map((menuItem, index) => (
+                <div key={index} className="mb-3">
+                    <div className="text-xl">{menuItem.category}</div>
                     <div className="pl-5">
-                        {menuItem.subMenu.map(subMenuItem => (
-                            <div><Link href={subMenuItem.cta || ''}>{subMenuItem.title}</Link></div>
+                        {menuItem.subMenu.map((subMenuItem, index) => (
+                            <div key={index} className='m-3'>
+                                <Link
+                                    className={`
+                                    ${router.pathname == subMenuItem.cta ? 'bg-red-200' : 'bg-red-50'}
+                                    hover:bg-red-100
+                                    px-3 py-1
+                                    `}
+                                    href={subMenuItem.cta || ''}
+                                >{subMenuItem.title}</Link>
+                            </div>
                         ))}
                     </div>
                 </div>
