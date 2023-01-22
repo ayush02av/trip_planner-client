@@ -6,11 +6,11 @@ const menu = [
         subMenu: [
             {
                 title: 'Home',
-                cta: '/'
+                cta: '/dashboard'
             },
             {
                 title: 'Profile',
-                cta: '/profile'
+                cta: '/dashboard/profile'
             }
         ]
     },
@@ -19,10 +19,19 @@ const menu = [
         subMenu: [
             {
                 title: 'All',
-                cta: '/groups'
+                cta: '/dashboard/groups'
             },
             {
                 title: 'New'
+            }
+        ]
+    },
+    {
+        category: 'Settings',
+        subMenu: [
+            {
+                title: 'Logout',
+                cta: '/logout'
             }
         ]
     }
@@ -36,7 +45,7 @@ export default function Sidenav() {
                     <div className="text-lg">{menuItem.category}</div>
                     <div className="pl-5">
                         {menuItem.subMenu.map(subMenuItem => (
-                            <div><Link href={subMenuItem.cta ? `/dashboard${subMenuItem.cta}` : ''}>{subMenuItem.title}</Link></div>
+                            <div><Link href={subMenuItem.cta || ''}>{subMenuItem.title}</Link></div>
                         ))}
                     </div>
                 </div>
