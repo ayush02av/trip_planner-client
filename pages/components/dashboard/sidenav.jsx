@@ -23,7 +23,7 @@ const menu = [
                 cta: '/dashboard/trips/all'
             },
             {
-                title: 'Start a new trip',
+                title: 'Plan a new trip',
                 cta: '/dashboard/trips/new'
             }
         ]
@@ -33,6 +33,7 @@ const menu = [
         subMenu: [
             {
                 title: 'My Places',
+                cta: '/dashboard/places/all'
             },
             {
                 title: 'My Calendar',
