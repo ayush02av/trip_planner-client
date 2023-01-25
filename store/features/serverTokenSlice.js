@@ -4,17 +4,17 @@ const initialState = {
     value: null
 }
 
-export const serverHeaderSlice = createSlice({
-    name: 'serverHeader',
+export const serverTokenSlice = createSlice({
+    name: 'serverToken',
     initialState,
     reducers: {
-        setserverHeader: (state, action) => {
+        setServerToken: (state, action) => {
             state.value = action.payload
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setserverHeader } = serverHeaderSlice.actions
+export const { setServerToken } = serverTokenSlice.actions
 
-export default serverHeaderSlice.reducer
+export default serverTokenSlice.reducer

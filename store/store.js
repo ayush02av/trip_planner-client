@@ -1,14 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 // features
-import counterSlice from './features/counterSlice'
 import userProfileSlice from './features/userProfileSlice'
-import serverHeaderSlice from './features/serverHeaderSlice'
+import serverTokenSlice from './features/serverTokenSlice'
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice,
         userProfile: userProfileSlice,
-        serverHeader: serverHeaderSlice,
+        serverToken: serverTokenSlice,
     },
 })

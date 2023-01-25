@@ -5,7 +5,7 @@ import { getCookie } from '../utility/cookies'
 import { useEffect, useState } from 'react'
 
 import { setUserProfile } from '@/store/features/userProfileSlice'
-import { setserverHeader } from '@/store/features/serverHeaderSlice'
+import { setServerToken } from '@/store/features/serverTokenSlice'
 
 export default function StoreMiddleware() {
     const dispatch = useDispatch()
@@ -22,7 +22,7 @@ export default function StoreMiddleware() {
                 }
             }
 
-            dispatch(setserverHeader(config))
+            dispatch(setServerToken(token))
 
             axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/profile`, config)
                 .then((res) => {
